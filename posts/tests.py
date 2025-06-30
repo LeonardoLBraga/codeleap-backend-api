@@ -64,6 +64,29 @@ class PostAPITests(APITestCase):
         self.assertEqual(self.post.content, "Updated Content")
 
 
+    def test_update_post_with_user(self):
+        """
+        Ensure that updating a post does not allow the username to be changed.
+
+        This test sends a PATCH request to update the title and content of an
+        existing post while also attempting to change the username. It verifies
+        that the title and content are updated successfully, but the username
+        remains unchanged.
+        """
+        url = reverse('post-update-delete', kwargs={'id': self.post.id})
+        data = {
+            "title": "Updated Title",
+            "content": "Updated Content",
+            "username": "john",
+        }
+        response = self.client.patch(url, data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.post.refresh_from_db()
+        self.assertEqual(self.post.title, "Updated Title")
+        self.assertEqual(self.post.content, "Updated Content")
+        self.assertEqual(self.post.username, "leonardo")
+
+
     def test_delete_post(self):
         """
         Test that a post can be deleted via the API.
