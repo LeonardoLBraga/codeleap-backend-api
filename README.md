@@ -80,7 +80,7 @@ Visit: [http://localhost:8000/careers/](http://localhost:8000/careers/)
   "content": "string"
 }
 ```
-#### ➕ Get Post (GET `/careers/`)
+#### 🔍 Get Post (GET `/careers/`)
 ```No body required.```
 
 #### ✏️ Update Post (PATCH `/careers/<id>/`)
@@ -93,6 +93,15 @@ Visit: [http://localhost:8000/careers/](http://localhost:8000/careers/)
 
 #### 🗑️ Delete Post (DELETE `/careers/<id>/`)
 ```No body required.```
+
+## 🧪 Running the tests
+
+To run the API unit tests, use:
+
+   ```bash
+   python manage.py test posts
+   ```
+This will run automated tests that verify the creation, listing, updating and deletion of posts.
 
 ## 🌐 Deployment (Render)
 
