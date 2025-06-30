@@ -53,7 +53,7 @@ Visit: [http://localhost:8000/careers/](http://localhost:8000/careers/)
 ### Base Model Structure
 ```json
 {
-  "id": number,
+  "id": "number",
   "username": "string",
   "created_datetime": "datetime",
   "title": "string",
