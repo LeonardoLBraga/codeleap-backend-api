@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8=qj4u!i2vrb5ix0or9v0=0n&ciumzdl_f7*stme@pp4svvz33
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://codeleap-backend-api-oxdh.onrender.com']
+ALLOWED_HOSTS = ['codeleap-backend-api-oxdh.onrender.com']
 
 
 # Application definition
