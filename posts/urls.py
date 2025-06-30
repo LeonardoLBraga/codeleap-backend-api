@@ -1,3 +1,7 @@
+"""
+URL configuration for the posts API endpoints.
+"""
+
 from django.urls import path
 from .views import PostListCreateAPIView, PostUpdateDeleteAPIView
 
