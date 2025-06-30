@@ -1,11 +1,13 @@
 services:
   - type: web
-    name: codeleap-backend
-    env: python
-    buildCommand: ""
-    startCommand: gunicorn codeleap_backend.wsgi:application
+    name: codeleap-backend-api
+    runtime: python
+    buildCommand: "./manage.py migrate"
+    startCommand: "gunicorn codeleap_backend.wsgi:application"
     envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: codeleap_backend.settings
-      - key: PYTHON_VERSION
-        value: 3.11
+      - key: DJANGO_SECRET_KEY
+        value: ""
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: codeleap-backend-api-oxdh.onrender.com
