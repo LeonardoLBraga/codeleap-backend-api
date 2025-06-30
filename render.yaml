@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: codeleap-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn codeleap_backend.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: codeleap_backend.settings
+      - key: PYTHON_VERSION
+        value: 3.11
