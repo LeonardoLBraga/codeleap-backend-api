@@ -1,13 +1,26 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""
+Command-line utility for administrative tasks in a Django project.
+
+This script sets up the environment and executes management commands,
+such as running the development server, applying migrations, or creating superusers.
+
+It also loads environment variables from a .env file using python-dotenv,
+allowing for secure and configurable deployment.
+"""
 import os
 import sys
 
 from dotenv import load_dotenv
-load_dotenv()  # 👈 Carrega as variáveis do .env automaticamente
+load_dotenv()
 
 def main():
-    """Run administrative tasks."""
+    """
+    Set the default Django settings module and execute command-line tasks.
+
+    This function initializes the Django application environment and
+    delegates execution to Django's management command system.
+    """
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'codeleap_backend.settings')
     try:
         from django.core.management import execute_from_command_line
